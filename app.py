@@ -17,17 +17,17 @@ def get_video_info():
         return jsonify({"message":"Video URL is required"}),400
     try:
        ydl_opts = {
-            'format': 'best',  
-            'verbose': True,
-            'skip_download': True,  
-            'writesubtitles': True,  
-            'subtitleslangs': ['en'],
-            'noplaylist': True,
-            'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-            'http_headers': {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-                'Accept-Language': 'en-US,en;q=0.9',
-            }
+            # 'format': 'best',  
+            # 'verbose': True,
+            # 'skip_download': True,  
+            # 'writesubtitles': True,  
+            # 'subtitleslangs': ['en'],
+            # 'noplaylist': True,
+            # 'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            # 'http_headers': {
+            #     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            #     'Accept-Language': 'en-US,en;q=0.9',
+            # }
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(video_url, download=False)
