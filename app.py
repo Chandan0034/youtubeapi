@@ -19,11 +19,11 @@ def get_video_info():
         ydl_opts = {
             'format': 'best',  # Change this if needed
             '--verbose': True,
-            'skip_download': True,  # Do not download the video
-            'writesubtitles': True,  # Write subtitles if available
-            'subtitleslangs': ['en'],
-            'noplaylist': True,
-            'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            # 'skip_download': True,  # Do not download the video
+            # 'writesubtitles': True,  # Write subtitles if available
+            # 'subtitleslangs': ['en'],
+            # 'noplaylist': True,
+            # 'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
         }
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(video_url, download=False)
